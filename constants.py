@@ -1,3 +1,9 @@
+# ;==========================================
+# ; Title:  Selenium Connection Bot
+# ; Author: Prabal Jain
+# ; Year: 2021
+# ; rel: Beta W/o GUI
+# ;==========================================
 import openpyxl_operation
 
 username = "yourmail@gmail.com"

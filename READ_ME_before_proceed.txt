@@ -1,4 +1,5 @@
 Before Running the Script 
+must have python installed with selenium and openpyxl
 open cmd and run
 pip install selenium
 pip install openpyxl

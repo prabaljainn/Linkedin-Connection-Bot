@@ -1,7 +1,7 @@
 Before Running the Script 
 open cmd and run
-```pip install selenium```
-```pip install openpyxl```
+pip install selenium
+pip install openpyxl
 
 then simply use the gui based app
 

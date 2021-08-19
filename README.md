@@ -4,6 +4,8 @@ Must have python3 installed in your Machine
 required libraries to be installed : selenium
 to install selenium on your Machine open cmd type
 ```pip install selenium```
+and 
+```pip install openpyxl```
 then run Graphical script.py 
 Just Filll and Start automate
 

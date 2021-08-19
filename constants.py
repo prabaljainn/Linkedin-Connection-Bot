@@ -5,10 +5,12 @@
 # ; rel: Beta W/o GUI
 # ;==========================================
 import openpyxl_operation
+from graphical_script import guibuild
 
 username = "yourmail@gmail.com"
+commaseparated = "Field1;Field2;Field3"
 password = "Yourpassword"
-list_of_searching_text = ['Sgsits','MITS','ITM Gwalior','Prestige']
+list_of_searching_text =list(commaseparated.split(";"))
 connection_mess = ''
 #upto pages is just to let the script know for how many pages you want it ti execute
 upto_page = 1
@@ -28,4 +30,4 @@ class Bcolors:
     UNDERLINE = '\033[4m'
 
 if __name__ == '__main__':
-    openpyxl_operation.function_to_run()
+    guibuild()

@@ -5,6 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 import openpyxl_operation
 import constants
+from graphical_script import guibuild
 
 
 def selenium_function(sheet, book, filename):
@@ -21,7 +22,7 @@ def selenium_function(sheet, book, filename):
     driver.find_element_by_css_selector("button[type= 'submit']").click()
 
     for keyword in constants.list_of_searching_text:
-        for page in range(1, constants.upto_page + 1):
+        for page in range(1, int(constants.upto_page) + 1):
             link = "https://www.linkedin.com/search/results/people/?keywords=" + keyword + "&origin=CLUSTER_EXPANSION&page=" + str(
                 page)
             time.sleep(2)
@@ -66,10 +67,10 @@ def selenium_function(sheet, book, filename):
                     driver.get(link)
                     time.sleep(2)
                 except NoSuchElementException:
-                    break
+                    i=i=1
                 except Exception as e:
                     print(e)
-                    break
+                    i=i+1
     now = str(datetime.now().strftime("%H")) + "H" + str(datetime.now().strftime("%M")) + "M" + str(
         datetime.now().strftime("%S") + "S")
 
@@ -78,8 +79,8 @@ def selenium_function(sheet, book, filename):
     driver.quit()
 
 
-if __name__=='__main__':
-    openpyxl_operation.function_to_run()
+if __name__ == '__main__':
+    guibuild()
 
 
 

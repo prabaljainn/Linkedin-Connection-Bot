@@ -5,6 +5,9 @@ import selenium_Funct
 
 
 # Opening Book as Active so that we can save reports
+from graphical_script import guibuild
+
+
 def function_to_run():
     book = openpyxl.load_workbook("template.xlsx", read_only=False)
     sheet = book.active
@@ -14,5 +17,5 @@ def function_to_run():
 
 
 
-if __name__ == "__main__":
-   function_to_run()
+if __name__ == '__main__':
+    guibuild()

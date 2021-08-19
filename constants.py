@@ -10,7 +10,7 @@ from graphical_script import guibuild
 username = "yourmail@gmail.com"
 commaseparated = "Field1;Field2;Field3"
 password = "Yourpassword"
-list_of_searching_text =list(commaseparated.split(";"))
+
 connection_mess = ''
 #upto pages is just to let the script know for how many pages you want it ti execute
 upto_page = 1

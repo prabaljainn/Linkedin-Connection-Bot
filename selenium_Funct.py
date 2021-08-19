@@ -3,7 +3,7 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
-import openpyxl_operation
+
 import constants
 from graphical_script import guibuild
 
@@ -21,7 +21,7 @@ def selenium_function(sheet, book, filename):
     driver.find_element_by_css_selector("input[id= 'password']").send_keys(constants.password)
     driver.find_element_by_css_selector("button[type= 'submit']").click()
 
-    for keyword in constants.list_of_searching_text:
+    for keyword in list(constants.commaseparated.split(";")):
         for page in range(1, int(constants.upto_page) + 1):
             link = "https://www.linkedin.com/search/results/people/?keywords=" + keyword + "&origin=CLUSTER_EXPANSION&page=" + str(
                 page)
@@ -67,7 +67,7 @@ def selenium_function(sheet, book, filename):
                     driver.get(link)
                     time.sleep(2)
                 except NoSuchElementException:
-                    i=i=1
+                    i=i+1
                 except Exception as e:
                     print(e)
                     i=i+1

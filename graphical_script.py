@@ -7,6 +7,8 @@ from PIL import ImageTk, Image
 
 constants.username = "Enter Your Linkedin Username"
 constants.password = "Enter"
+constants.commaseparated= "field1;field2"
+constants.upto_page= 1
 
 
 def start_automate(e1, e2, e3, e4):

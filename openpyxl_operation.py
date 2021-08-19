@@ -12,7 +12,7 @@ def function_to_run():
     book = openpyxl.load_workbook("template.xlsx", read_only=False)
     sheet = book.active
     user = constants.username.split("@")[0]
-    filename = str(user + " " + constants.list_of_searching_text[0])
+    filename = str(user + " " + list(constants.commaseparated.split(";"))[0])
     selenium_Funct.selenium_function(sheet, book, filename)
 
 

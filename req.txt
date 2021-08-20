@@ -1,0 +1,2 @@
+openpyxl==3.0.7
+selenium==3.141.0

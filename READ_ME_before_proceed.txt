@@ -1,9 +1,12 @@
-Before Running the Script 
-open cmd and run
-pip install selenium
-pip install openpyxl
+on the same directory open terminal check if you have python installed or not by:
+python --version
 
-then simply use the gui based app
+if you have python installed 
+just run pip install -r req.txt
+
+then run RunME.py
+
+hola!
 
 
 contact for more: 

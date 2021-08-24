@@ -1,3 +1,11 @@
+#############################################
+__author__ = "Prabal Jain"                  #
+__LinkedIn__ = "prabaljainn"                #
+__Github__ = "prabaljainn"                  #
+#############################################
+
+
+
 from Scripts import  constants
 from tkinter import *
 import tkinter.font as tkFont

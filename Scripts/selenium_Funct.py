@@ -1,3 +1,9 @@
+#############################################
+__author__ = "Prabal Jain"                  #
+__LinkedIn__ = "prabaljainn"                #
+__Github__ = "prabaljainn"                  #
+#############################################s
+
 import time
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException

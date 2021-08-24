@@ -11,9 +11,9 @@ from tkinter import *
 import tkinter.font as tkFont
 from Scripts import selenium_Funct
 
-constants.username = "Pranjalpratap23@gmail.com"
-constants.password = "S@r@don23"
-constants.commaseparated= "sgsits"
+constants.username = "Enter Your Username"
+constants.password = "Password please"
+constants.commaseparated= "Field1;Field2;field3"
 constants.upto_page= 1
 
 

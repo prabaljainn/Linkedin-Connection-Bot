@@ -1,4 +1,4 @@
-Linkedin_Connection_Bot ⚔️🖥️
+# Linkedin_Connection_Bot ⚔️🖥️
 An Automation Bot that Sends connection requests to n number of user from different fields and saves their data to a CSV file.
 ## Use Cases 🤞😊
 📍 Bot can help Small startups or early stage startups by targeting Linkedin Networks as their initial traffic, i am also on a Linkedin automated messaging bot.

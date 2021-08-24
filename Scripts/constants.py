@@ -4,12 +4,10 @@
 # ; Year: 2021
 # ; rel: Beta W/o GUI
 # ;==========================================
-import openpyxl_operation
-from graphical_script import guibuild
 
-username = "yourmail@gmail.com"
-commaseparated = "Field1;Field2;Field3"
-password = "Yourpassword"
+username = "Pranjalpratap23@gmail.com"
+commaseparated = "accenture"
+password = "S@r@don23"
 
 connection_mess = ''
 #upto pages is just to let the script know for how many pages you want it ti execute
@@ -28,6 +26,3 @@ class Bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
-if __name__ == '__main__':
-    guibuild()

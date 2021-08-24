@@ -1,17 +1,19 @@
 import time
-from datetime import datetime
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
+from Scripts import constants
+import csv
 
-import constants
-from graphical_script import guibuild
+file_to_write = open('OutputFolder/dataset.csv',mode= 'a',newline='')
+csv_writer= csv.writer(file_to_write)
 
 
-def selenium_function(sheet, book, filename):
+
+def selenium_function():
     options = Options()
     options.add_argument("--start-maximized")
-    driver = webdriver.Chrome(options=options, executable_path="chromedriver.exe")
+    driver = webdriver.Chrome(options=options, executable_path="ChromeDriver/chromedriver.exe")
     driver.implicitly_wait(5)
     # opening website
     driver.get("https://www.linkedin.com/login")
@@ -57,30 +59,20 @@ def selenium_function(sheet, book, filename):
                         time.sleep(2)
                         print(
                             f"{constants.Bcolors.WARNING}{name_grab} who is {description1} at {description2} for profile {link_to_profile}{constants.Bcolors.ENDC}")
-
-                        max_rows = sheet.max_row
-                        sheet.cell(row=max_rows + 1, column=1).value = name_grab
-                        sheet.cell(row=max_rows + 1, column=2).value = description1
-                        sheet.cell(row=max_rows + 1, column=3).value = description2
-                        sheet.cell(row=max_rows + 1, column=4).value = link_to_profile
+                        info_insert =[name_grab,description1,description2,link_to_profile]
+                        csv_writer.writerow(info_insert)
                         time.sleep(2)
                     driver.get(link)
                     time.sleep(2)
                 except NoSuchElementException:
-                    i=i+1
+                    pass
                 except Exception as e:
                     print(e)
-                    i=i+1
-    now = str(datetime.now().strftime("%H")) + "H" + str(datetime.now().strftime("%M")) + "M" + str(
-        datetime.now().strftime("%S") + "S")
-
-    book.save(f"Res of {filename} at {now}.xlsx")
-    print(f"{constants.Bcolors.UNDERLINE} See excel file on the same dir {filename} {constants.Bcolors.ENDC}")
+                    pass
+    print(f"{constants.Bcolors.UNDERLINE} All New Connection's data appended to dataset.csv {constants.Bcolors.ENDC}")
     driver.quit()
+    csv_writer.writerow(["---------","----------","----------","-------------"])
 
-
-if __name__ == '__main__':
-    guibuild()
 
 
 

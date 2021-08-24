@@ -1,4 +1,3 @@
-from graphical_script import guibuild
-
+from Scripts import graphical_script
 if __name__ == '__main__':
-    guibuild()
+    graphical_script.guibuild()

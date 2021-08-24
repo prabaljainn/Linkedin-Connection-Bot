@@ -1,22 +1,21 @@
-import constants
-import openpyxl_operation
+from Scripts import  constants
 from tkinter import *
 import tkinter.font as tkFont
+from Scripts import selenium_Funct
 
-from PIL import ImageTk, Image
-
-constants.username = "Enter Your Linkedin Username"
-constants.password = "Enter"
-constants.commaseparated= "field1;field2"
+constants.username = "Pranjalpratap23@gmail.com"
+constants.password = "S@r@don23"
+constants.commaseparated= "sgsits"
 constants.upto_page= 1
 
 
-def start_automate(e1, e2, e3, e4):
+def start_automate(e1, e2, e3, e4,root):
     constants.username = e1.get()
     constants.password = e2.get()
     constants.commaseparated = e3.get()
     constants.upto_page = e4.get()
-    openpyxl_operation.function_to_run()
+    selenium_Funct.selenium_function()
+    root.destroy()
 
 
 def guibuild():
@@ -64,7 +63,7 @@ def guibuild():
         row=22, column=0)
 
     buttonsubmit = Button(root, text="Start The Automation!!", fg='blue', height=5, width=40,
-                          command=lambda: start_automate(e1, e2, e3, e4)).grid(row=24,
+                          command=lambda: start_automate(e1, e2, e3, e4,root)).grid(row=24,
                                                                                columnspan=3,
                                                                                column=0,
                                                                                padx=10,
@@ -88,5 +87,3 @@ def guibuild():
     root.mainloop()
 
 
-if __name__ == '__main__':
-    guibuild()

@@ -5,9 +5,12 @@ An Automation Bot that Sends connection requests to n number of user from differ
 </br>
 📍 Bot can help you target people from a desired interests or company to seek referals
 
+# Installation Video
+https://youtu.be/KcLBB9dqmRw
+
+
 ## You Must have python3 and selenium library Installed ⚠
 To check Python version on your machine open CMD or PowerShell, then Follow </br>
-
 ```bash
 python --version
 ```

@@ -4,9 +4,7 @@
 
 An Automation Bot that Sends connection requests to n number of user from different fields and saves their data to a CSV file.
 ## Use Cases 🤞😊
-📍 Bot can help Small startups or early stage startups by targeting Linkedin Networks as their initial traffic, i am also on a Linkedin automated messaging bot.
-</br>
-📍 Bot can help you target people from a desired interests or company to seek referals
+![lINKEDUIN (1)](https://user-images.githubusercontent.com/62801988/130943767-b73eb21e-a57a-4cd9-9928-32d1393d2c49.png)
 
 # Installation Video
 https://youtu.be/KcLBB9dqmRw

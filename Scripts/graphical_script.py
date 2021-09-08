@@ -22,7 +22,7 @@ def start_automate(e1, e2, e3, e4,root):
     constants.password = e2.get()
     constants.commaseparated = e3.get()
     constants.upto_page = e4.get()
-    selenium_Funct.selenium_function()
+    selenium_Funct.main()
     root.destroy()
 
 

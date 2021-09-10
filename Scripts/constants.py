@@ -5,9 +5,9 @@
 # ; rel: Beta W/o GUI
 # ;==========================================
 
-username = "Pranjalpratap23@gmail.com"
+username = "YOUREMAIL@gmail.com"
 commaseparated = "accenture"
-password = "S@r@don23"
+password = "YOUR PASS"
 
 connection_mess = ''
 #upto pages is just to let the script know for how many pages you want it ti execute

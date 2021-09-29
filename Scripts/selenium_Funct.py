@@ -3,6 +3,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from Scripts import constants
 import csv
+import time
 
 def configurations():
     global driver
@@ -92,7 +93,7 @@ def main():
     
     for keyword in list(constants.commaseparated.split(';')):
         for page in range(1, int(constants.upto_page) + 1):
-            browser.wait(2)
+            time.sleep(2)
             
             link = "https://www.linkedin.com/search/results/people/?keywords=" + keyword + "&origin=CLUSTER_EXPANSION&page=" + str(page)
             webpage.visit(link)
@@ -102,7 +103,7 @@ def main():
             log(f"a total of {len(list_of_cards)} Connections found on page {page} for {keyword}")
             
             for i in range(1, len(list_of_cards) + 1):
-                browser.wait(2)
+                time.sleep(2)
                 
                 try:                    
                     button_on_card = webpage.grab_element_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) button").is_enabled()
@@ -112,11 +113,11 @@ def main():
                     if button_on_card == True and button_text == 'Connect':
                         webpage.click_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) span a span span")
                         
-                        browser.wait(2)
+                        time.sleep(2)
                         
                         webpage.click_with_css_selector("button[data-control-name='connect']")
                         
-                        browser.wait(2)
+                        time.sleep(2)
                         
                         webpage.click_with_css_selector("button[aria-label='Send now']")
                         
@@ -128,7 +129,7 @@ def main():
                         
                         link_to_profile = webpage.get_url()
                         
-                        browser.wait(2)
+                        time.sleep(2)
                         
                         log(f"{constants.Bcolors.WARNING}{name_grab} who is {description1} at {description2} for profile {link_to_profile}{constants.Bcolors.ENDC}")
                         
@@ -136,11 +137,11 @@ def main():
                         
                         csv_io.insert_row(info)
                         
-                        browser.wait(2)
+                        time.sleep(2)
                         
                     webpage.visit(link)
                     
-                    browser.wait(2)
+                    time.sleep(2)
                 
                 except NoSuchElementException:
                     pass

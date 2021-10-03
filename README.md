@@ -1,4 +1,33 @@
 # Linkedin_Connection_Bot ⚔️🖥️
+
+# How to contibute :scroll:
+
+### 0. Star The Repo :star2:
+
+Star the repo by pressing the topmost-right button to start your wonderful journey.
+
+
+### 1. Fork it :fork_and_knife:
+
+You can get your own fork/copy of [Linkedin-Connection-bot](https://github.com/prabaljainn/Linkedin-Connection-Bot/) by using the <a href="https://github.com/prabaljainn/Linkedin-Connection-Bot/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button on top-right of your screen.
+
+ [![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/prabaljainn/Linkedin-Connection-Bot/)
+
+
+### 2. Clone it :busts_in_silhouette:
+
+`NOTE: commands are to be executed on Linux, Mac, and Windows(using Powershell)`
+
+You need to clone (download) it to local machine using
+
+```sh
+$ git clone https://github.com/YOURUSERNAME/Linkedin-Connection-Bot.git
+```
+
+> This makes a local copy of the repository in your machine.
+
+CONTRIBUTE AND PUSH TO YOUR REPO THEN MAKE A PULL REQUEST HERE.
+ 
 # https://youtu.be/SRd1-Pf5HJ8
 
 <img src="https://user-images.githubusercontent.com/62801988/130929505-4a17bdbd-a6ab-461a-85be-1af82d7f1d53.png" style="max-width:70%;">

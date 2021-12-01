@@ -1,3 +1,4 @@
+# importing the required modules
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
@@ -5,15 +6,19 @@ from Scripts import constants
 import csv
 import time
 
+# setup
 def configurations():
     global driver
     global options
     
     options = Options()
-    options.add_argument("--start-maximized")
-    
-    driver = webdriver.Chrome(options=options, executable_path="ChromeDriver/chromedriver.exe")
+    options.add_argument("--start-maximized") # opens the window in full screen
+     
+    # setting the Chrome Driver path
+    driver = webdriver.Chrome(options=options, executable_path="ChromeDriver/chromedriver.exe") 
 
+
+# this class deals with the CSV file operations like opening the file, setting up the writer, inserting new row, etc.
 class Csv_io:
     def __init__(self, filename, mode, newline):
         self.filename = filename
@@ -23,55 +28,76 @@ class Csv_io:
         self.openfile()
         self.writer_setup()
         
+    # opens file
     def openfile(self):
         self.file_to_write = open(self.filename, mode = self.mode, newline = self.newline)
     
+    # initialises the writer object
     def writer_setup(self):
         self.csv_writer = csv.writer(self.file_to_write)
-        
+    
+    # inserts a new row into the CSV file
     def insert_row(self, info):
         self.csv_writer.writerow(info)
 
+    def __str__(self):
+        return 'this class deals with the CSV file operations'
+
+# this class deals with the DOM operations like grabbing the elements using selectors, clicking on elements, sending text to elements, etc.
 class Webpage:
+    # opens the given url
     def visit(self, url):
         driver.get(url)
     
+    # clicks the element selected using CSS Selector
     def click_with_css_selector(self, css_selector):
         driver.find_element_by_css_selector(css_selector).click()
     
+    # gets the element selected using CSS Selector
     def grab_element_with_css_selector(self, css_selector):
         return driver.find_element_by_css_selector(css_selector)
     
+    # gets the elements* selected using CSS Selector
     def grab_elements_with_css_selector(self, css_selector):
         return driver.find_elements_by_css_selector(css_selector)
-    
+
+    # sends the entered text to the element selected using CSS Selector
     def type_value_with_css_selector(self, css_selector, keys):
         driver.find_element_by_css_selector(css_selector).send_keys(keys)
-        
+    
+    # gets the text from the element selected using CSS Selector
     def grab_text_with_css_selector(self, css_selector):
         return driver.find_element_by_css_selector(css_selector).text
-        
+    
+    # returns the url of the current page
     def get_url(self):
         return driver.current_url
 
+# this class deals with the browser operations like ending the session, going back to previous page, wait, etc.
 class Browser:
+    # end the current session
     def end_session(self):
         driver.quit()
     
+    # go back to previous page 
     def go_back(self):
         driver.back()
-        
+    
+    # wait/sleep for given time
     def wait(self, duration):
         driver.implicitly_wait(duration)
-        
+    
+# this is the user class
 class User:
     def __init__(self, username, password):
         self.username = username
         self.password = password
-    
+
+# logs text onto python console
 def log(text):
     print(text)
-    
+
+# main function
 def main():
     configurations()
     
@@ -153,5 +179,4 @@ def main():
         browser.end_session()
         
         csv_io.insert_row(["---------","----------","----------","-------------"])
-
 

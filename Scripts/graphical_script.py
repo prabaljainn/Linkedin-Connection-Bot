@@ -4,6 +4,12 @@ __LinkedIn__ = "prabaljainn"                #
 __Github__ = "prabaljainn"                  #
 #############################################
 
+#############################################
+__author2__ = "Chandan Gupta"               #
+__LinkedIn__ = "cladzen"                    #
+                                            #
+#############################################
+
 
 
 from Scripts import  constants

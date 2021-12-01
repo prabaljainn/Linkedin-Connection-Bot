@@ -1,8 +1,8 @@
 # ;==========================================
 # ; Title:  Selenium Connection Bot
-# ; Author: Prabal Jain
+# ; Authors: Prabal Jain and Chandan Gupta
 # ; Year: 2021
-# ; rel: Beta W/o GUI
+# ; rel: Beta W GUI
 # ;==========================================
 
 username = "YOUREMAIL@gmail.com"

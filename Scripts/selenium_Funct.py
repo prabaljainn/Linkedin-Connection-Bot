@@ -1,12 +1,12 @@
 # importing the required modules
-import csv
-import time
-
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
-
 from Scripts import constants
+from selenium.webdriver.common.by import By
+
+import csv
+import time
 
 
 # setup
@@ -55,23 +55,23 @@ class Webpage:
 
     # clicks the element selected using CSS Selector
     def click_with_css_selector(self, css_selector):
-        driver.find_element_by_css_selector(css_selector).click()
+        driver.find_element(By.CLASS_NAME, css_selector).click()
 
     # gets the element selected using CSS Selector
     def grab_element_with_css_selector(self, css_selector):
-        return driver.find_element_by_css_selector(css_selector)
+        return driver.find_element(By.CLASS_NAME, css_selector)
 
     # gets the elements* selected using CSS Selector
     def grab_elements_with_css_selector(self, css_selector):
-        return driver.find_elements_by_css_selector(css_selector)
+        return driver.find_elements(By.CLASS_NAME ,css_selector)
 
     # sends the entered text to the element selected using CSS Selector
     def type_value_with_css_selector(self, css_selector, keys):
-        driver.find_element_by_css_selector(css_selector).send_keys(keys)
+        driver.find_element(By.CLASS_NAME, css_selector).send_keys(keys)
 
     # gets the text from the element selected using CSS Selector
     def grab_text_with_css_selector(self, css_selector):
-        return driver.find_element_by_css_selector(css_selector).text
+        return driver.find_element(By.CLASS_NAME, css_selector).text
 
     # returns the url of the current page
     def get_url(self):
@@ -181,7 +181,7 @@ def main():
 
                     webpage.visit(link)
 
-                    time.sleep(0)
+                    time.sleep(2)
 
                 except NoSuchElementException:
                     pass

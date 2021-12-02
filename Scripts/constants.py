@@ -10,8 +10,9 @@ commaseparated = "accenture"
 password = "YOUR PASS"
 
 connection_mess = ''
-# upto pages is just to let the script know for how many pages you want it ti execute
+#upto pages is just to let the script know for how many pages you want it ti execute
 upto_page = 1
+
 
 
 ## Just to add some colors in text

@@ -1,30 +1,29 @@
 #############################################
-__author__ = "Prabal Jain"  #
-__LinkedIn__ = "prabaljainn"  #
-__Github__ = "prabaljainn"  #
+__author__ = "Prabal Jain"                  #
+__LinkedIn__ = "prabaljainn"                #
+__Github__ = "prabaljainn"                  #
 #############################################
 
 #############################################
-__author2__ = "Chandan Gupta"  #
-__LinkedIn2__ = "cladzen"  #
-
-#
+__author2__ = "Chandan Gupta"               #
+__LinkedIn2__ = "cladzen"                    #
+                                            #
 #############################################
 
 
-import tkinter.font as tkFont
+
+from Scripts import  constants
 from tkinter import *
-
-from Scripts import constants
+import tkinter.font as tkFont
 from Scripts import selenium_Funct
 
 constants.username = "Enter Your Username"
 constants.password = "Password please"
-constants.commaseparated = "Field1;Field2;field3"
-constants.upto_page = 1
+constants.commaseparated= "Field1;Field2;field3"
+constants.upto_page= 1
 
 
-def start_automate(e1, e2, e3, e4, root):
+def start_automate(e1, e2, e3, e4,root):
     constants.username = e1.get()
     constants.password = e2.get()
     constants.commaseparated = e3.get()
@@ -79,10 +78,10 @@ def guibuild():
 
     buttonsubmit = Button(root, text="Start The Automation!!", fg='blue', height=5, width=40,
                           command=lambda: start_automate(e1, e2, e3, e4, root)).grid(row=24,
-                                                                                     columnspan=3,
-                                                                                     column=0,
-                                                                                     padx=10,
-                                                                                     pady=7)
+                                                                               columnspan=3,
+                                                                               column=0,
+                                                                               padx=10,
+                                                                               pady=7)
 
     link = "https://www.linkedin.com/in/prabaljainn"
     text = Text(root, height=1, padx=10, borderwidth=1, bg="cyan")
@@ -100,3 +99,5 @@ def guibuild():
     Button(root, text="Quit", command=root.destroy).grid(row=34)
 
     root.mainloop()
+
+

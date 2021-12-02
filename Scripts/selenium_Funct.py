@@ -48,7 +48,8 @@ class Webpage:
     # opens the given url
     def visit(self, url):
         driver.get(url)
-    
+    def click_with_xpath_selector(self, xpath_selector):
+        driver.find_element_by_xpath(xpath_selector).click()
     # clicks the element selected using CSS Selector
     def click_with_css_selector(self, css_selector):
         driver.find_element_by_css_selector(css_selector).click()
@@ -109,7 +110,7 @@ def main():
     
     browser = Browser()
     
-    browser.wait(5)
+    browser.wait(2)
     
     webpage.visit("https://www.linkedin.com/login")
     
@@ -137,16 +138,18 @@ def main():
                     button_text = webpage.grab_text_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) button span")
                     
                     if button_on_card == True and button_text == 'Connect':
-                        time.sleep(2)
+                        time.sleep(1)
                         webpage.click_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) span a span span")
                         
                         time.sleep(2)
 
                         name_grab = webpage.grab_text_with_css_selector("h1")
-                        
+                        browser.wait(10)
                         # webpage.click_with_css_selector("button[data-control-name='connect']")
-                        webpage.click_with_css_selector("button[class= 'artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-profile-actions__action']")
-                        time.sleep(2)
+                        # webpage.click_with_css_selector("button[class= 'artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-profile-actions__action']")
+                        connect_xpath = "/html[1]/body[1]/div[6]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/main[1]/section[1]/div[2]/div[3]/div[1]/button[1]"
+                        webpage.click_with_xpath_selector(connect_xpath)
+                        time.sleep(0)
                         
                         webpage.click_with_css_selector("button[aria-label='Send now']")
                         
@@ -156,7 +159,7 @@ def main():
                         
                         link_to_profile = webpage.get_url()
                         
-                        time.sleep(2)
+                        time.sleep(1)
                         
                         log(f"{constants.Bcolors.WARNING}{name_grab} who is {description1} at {description2} for profile {link_to_profile}{constants.Bcolors.ENDC}")
                         
@@ -164,11 +167,11 @@ def main():
                         
                         csv_io.insert_row(info)
                         
-                        time.sleep(2)
+                        time.sleep(1)
                         
                     webpage.visit(link)
                     
-                    browser.wait(2)
+                    browser.wait(10)
                 
                 except NoSuchElementException:
                     pass

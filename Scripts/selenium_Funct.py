@@ -137,17 +137,18 @@ def main():
                     button_text = webpage.grab_text_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) button span")
                     
                     if button_on_card == True and button_text == 'Connect':
+                        time.sleep(2)
                         webpage.click_with_css_selector(f"li[class= 'reusable-search__result-container ']:nth-child({i}) span a span span")
                         
                         time.sleep(2)
+
+                        name_grab = webpage.grab_text_with_css_selector("h1")
                         
-                        webpage.click_with_css_selector("button[data-control-name='connect']")
-                        
+                        # webpage.click_with_css_selector("button[data-control-name='connect']")
+                        webpage.click_with_css_selector("button[class= 'artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-profile-actions__action']")
                         time.sleep(2)
                         
                         webpage.click_with_css_selector("button[aria-label='Send now']")
-                        
-                        name_grab = webpage.grab_text_with_css_selector("h1")
                         
                         description1 = webpage.grab_text_with_css_selector("div[class= 'text-body-medium break-words']")
                         
@@ -167,7 +168,7 @@ def main():
                         
                     webpage.visit(link)
                     
-                    time.sleep(2)
+                    browser.wait(2)
                 
                 except NoSuchElementException:
                     pass

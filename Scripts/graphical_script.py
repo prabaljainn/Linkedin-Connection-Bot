@@ -4,12 +4,6 @@ __LinkedIn__ = "prabaljainn"                #
 __Github__ = "prabaljainn"                  #
 #############################################
 
-#############################################
-__author2__ = "Chandan Gupta"               #
-__LinkedIn2__ = "cladzen"                    #
-                                            #
-#############################################
-
 
 
 from Scripts import  constants
@@ -77,7 +71,7 @@ def guibuild():
         row=22, column=0)
 
     buttonsubmit = Button(root, text="Start The Automation!!", fg='blue', height=5, width=40,
-                          command=lambda: start_automate(e1, e2, e3, e4, root)).grid(row=24,
+                          command=lambda: start_automate(e1, e2, e3, e4,root)).grid(row=24,
                                                                                columnspan=3,
                                                                                column=0,
                                                                                padx=10,
@@ -99,5 +93,4 @@ def guibuild():
     Button(root, text="Quit", command=root.destroy).grid(row=34)
 
     root.mainloop()
-
 

@@ -13,6 +13,8 @@ connection_mess = ''
 # upto pages is just to let the script know for how many pages you want it to execute
 upto_page = 1
 
+# Add location parameter for filtering
+location = "United States"  # Default location, can be changed to any location like "California, United States", "India", etc.
 
 # Just to add some colors in text
 class Bcolors:
